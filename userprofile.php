@@ -55,14 +55,14 @@ if ($result && $result->num_rows === 1) {
 
         header {
             background-color: #FFFCF5;
-            padding: 18px 20px;
+            padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         header h2 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 600;
   color: #393b3eff;
   letter-spacing: 1px;
@@ -99,47 +99,52 @@ if ($result && $result->num_rows === 1) {
         }
 
         .dashboard-wrapper {
-            display: flex;
-            justify-content: flex-start;
-            padding: 60px 60px;
-        }
-
-        .dashboard {
-            display: grid;
-            grid-template-columns: repeat(2, 250px);
-            gap: 30px;
-        }
-
-        .card {
-            background: #FFFCF5;
-            width: 250px;
-            height: 250px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            transition: transform 0.2s;
-        }
-
-        .card:hover {
-            transform: scale(1.03);
-        }
-
-        .card i {
-            font-size: 36px;
-            margin-bottom: 10px;
-            color: #5a2e1b;
-        }
-
-        .card a {
-            text-decoration: none;
-            font-weight: bold;
-            color: #5a2e1b;
-            font-size: 18px;
-        }
+    padding: 60px 60px;
+}
+.dashboard-columns {
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+}
+.dashboard-col {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.center-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 60px;
+}
+.card {
+    background: #FFFCF5;
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.2s;
+}
+.card:hover {
+    transform: scale(1.03);
+}
+.card i {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #5a2e1b;
+}
+.card a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #5a2e1b;
+    font-size: 18px;
+}
 
         .footer {
             background-color: #1F2937;
@@ -160,24 +165,33 @@ if ($result && $result->num_rows === 1) {
         <a href="?logout=true" class="logout-btn">Logout</a>
     </div>
 </header>
-
 <div class="dashboard-wrapper">
-    <div class="dashboard">
-        <div class="card">
-            <i class="fas fa-store"></i>
-            <a href="browse_products.php">Browse Products</a>
+    <div class="dashboard-columns">
+        <div class="dashboard-col">
+            <div class="card">
+                <i class="fas fa-store"></i>
+                <a href="browse_products.php">Browse Products</a>
+            </div>
+            <div class="card">
+                <i class="fas fa-shopping-cart"></i>
+                <a href="cart.php">My Cart</a>
+            </div>
         </div>
-        <div class="card">
-            <i class="fas fa-shopping-cart"></i>
-            <a href="cart.php">My Cart</a>
+        <div class="dashboard-col">
+            <div class="card">
+                <i class="fas fa-clipboard-list"></i>
+                <a href="my_orders.php">My Orders</a>
+            </div>
+            <div class="card">
+                <i class="fas fa-user-edit"></i>
+                <a href="edit_profile.php">Edit Profile</a>
+            </div>
         </div>
-        <div class="card">
-            <i class="fas fa-clipboard-list"></i>
-            <a href="my_orders.php">My Orders</a>
-        </div>
-        <div class="card">
-            <i class="fas fa-user-edit"></i>
-            <a href="edit_profile.php">Edit Profile</a>
+        <div class="dashboard-col center-col">
+            <div class="card">
+                <i class="fas fa-couch"></i>
+                <a href="myroom.php">Design My Look</a>
+            </div>
         </div>
     </div>
 </div>
