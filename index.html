@@ -24,6 +24,7 @@
                 
                 <nav class="nav">
                     <a href="#home" class="nav-link active">Home</a>
+                    
                     <a href="#categories" class="nav-link">Categories</a>
                     <a href="#about" class="nav-link">About</a>
                     <a href="#contact" class="nav-link">Contact</a>
@@ -38,6 +39,7 @@
                     </button>
                     <button class="icon-btn" id="cart-btn">
                         <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cart-count">0</span>
                     </button>
                 </div>
             </div>
@@ -167,7 +169,121 @@
 
         
 
-        
+        <!-- Cart Page -->
+        <section id="cart" class="page">
+            <div class="container">
+                <div class="cart-container">
+                    <div class="cart-header">
+                        <h1>Your Shopping Cart</h1>
+                        <p>Review your items before checkout</p>
+                    </div>
+                    
+                    <div class="cart-content">
+                        <div class="cart-table-header">
+                            <div class="col-product">Product</div>
+                            <div class="col-price">Price</div>
+                            <div class="col-quantity">Quantity</div>
+                            <div class="col-total">Total</div>
+                        </div>
+                        
+                        <div id="cart-items">
+                            <!-- Cart items will be loaded by JavaScript -->
+                        </div>
+                        
+                        <div class="cart-footer">
+                            <button class="continue-shopping" onclick="showPage('shop')">
+                                <i class="fas fa-arrow-left"></i> Continue Shopping
+                            </button>
+                            
+                            <div class="cart-summary">
+                                <h3>Cart Summary</h3>
+                                <div class="summary-row">
+                                    <span>Subtotal</span>
+                                    <span id="cart-subtotal">Rs 0.00</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Shipping</span>
+                                    <span class="free">Calculated at checkout</span>
+                                </div>
+                                <div class="summary-row total">
+                                    <span>Total</span>
+                                    <span id="cart-total">Rs 0.00</span>
+                                </div>
+                                <button class="checkout-btn" onclick="showPage('checkout')">Proceed to checkout</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Checkout Page -->
+        <section id="checkout" class="page">
+            <div class="container">
+                <div class="checkout-grid">
+                    <div class="checkout-form">
+                        <h1>Checkout</h1>
+                        <p>Enter your details below to complete purchase</p>
+                        
+                        <form id="checkout-form">
+                            <div class="form-section">
+                                <h2>Shipping Information</h2>
+                                <input type="text" name="name" placeholder="Name" required>
+                                <input type="email" name="email" placeholder="Email" required>
+                                <input type="tel" name="phone" placeholder="Phone Number" required>
+                                <input type="text" name="address" placeholder="Address" required>
+                                <div class="form-row">
+                                    <input type="text" name="city" placeholder="City" required>
+                                    <input type="text" name="state" placeholder="State" required>
+                                    <input type="text" name="zipCode" placeholder="Zip code" required>
+                                </div>
+                                <button type="button" class="confirm-btn">Confirm</button>
+                            </div>
+                            
+                            <div class="form-section">
+                                <h2>Payment Information</h2>
+                                <label>Cardholder name</label>
+                                <input type="text" name="cardholderName" required>
+                                <label>Card number</label>
+                                <input type="text" name="cardNumber" required>
+                                <div class="form-row">
+                                    <div>
+                                        <label>Expiration date</label>
+                                        <input type="text" name="expirationDate" placeholder="MM/YY" required>
+                                    </div>
+                                    <div>
+                                        <label>CVV</label>
+                                        <input type="text" name="cvv" required>
+                                    </div>
+                                </div>
+                                <button type="submit" class="order-btn">Order Now</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="order-summary">
+                        <h2>Order Summary</h2>
+                        <div id="checkout-items">
+                            <!-- Order items will be loaded by JavaScript -->
+                        </div>
+                        <div class="order-total">
+                            <div class="total-row">
+                                <span>Subtotal</span>
+                                <span id="checkout-subtotal">Rs 0.00</span>
+                            </div>
+                            <div class="total-row">
+                                <span>Shipping</span>
+                                <span class="free">Free</span>
+                            </div>
+                            <div class="total-row final">
+                                <span>Total</span>
+                                <span id="checkout-total">Rs 0.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         
         <section  id="categories" class="page">
@@ -415,7 +531,27 @@
             </div>
         </section>
 
-       
+        <!-- Wishlist Page -->
+        <section id="wishlist" class="page">
+            <div class="container">
+                <div class="cart-container">
+                    <div class="cart-header">
+                        <h1>Your Wishlist</h1>
+                        <p>All your favorite products in one place</p>
+                    </div>
+                    <div class="cart-content">
+                        <div class="cart-table-header">
+                            <div class="col-product">Product</div>
+                            <div class="col-price">Price</div>
+                            <div class="col-action">Action</div>
+                        </div>
+                        <div id="wishlist-items">
+                            <!-- Wishlist items will be loaded by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
             <!---------------Newsletter-->
